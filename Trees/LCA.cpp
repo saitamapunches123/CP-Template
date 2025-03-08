@@ -61,10 +61,14 @@ struct LCA_seg_tree{
 		return get_min_depth_node(left_min_node,right_min_node);
 	}
 	int get_lca(int node1,int node2){
-		//need to return node with minimum tin b/w tin of node1 and node2
+		//need to return depth with minimum tin b/w tin of node1 and node2
 		int qs=min(tin[node1],tin[node2]);
 		int qe=max(tin[node1],tin[node2]);
 		return query(0,time-1,0,qs,qe);
+	}
+    int get_dist(int node1,int node2){
+		int lca_node=get_lca(node1,node2);
+		return depth[node1]+depth[node2]-2*depth[lca_node];
 	}
 };
 
