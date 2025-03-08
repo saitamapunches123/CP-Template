@@ -72,4 +72,6 @@ LCA_seg_tree obj(n);
 obj.build_LCA(1,adj); //1 root of the tree
 
 int lca=obj.get_lca(a,b);
+
+We can also use static RMQ over segtree if the number of queries is more than number of nodes
 */
