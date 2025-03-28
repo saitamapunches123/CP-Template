@@ -4,7 +4,7 @@ Number of primes in n=n/log(n)
 */
 
 
-void sieve(int n) {
+vector<bool> sieve(int n) {
     vector<bool> is_prime(n + 1, true);  
     is_prime[0] = is_prime[1] = false;   // 0 and 1 are not prime
 
