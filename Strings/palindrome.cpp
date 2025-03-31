@@ -27,10 +27,18 @@ vector<int> get_lps(string &s) {
     return lps;
 }
 int get_max_pali_pref(string &s){ //need to find the longest prefix of this string which is a palindrome
-	string rev=s;
-	reverse(rev.begin(),rev.end());
-	string t=s+'#'+rev;
-	vector<int> lps=get_lps(t);
-	int max_pali_pref=lps.back();
+    string rev=s;
+    reverse(rev.begin(),rev.end());
+    string t=s+'#'+rev;
+    vector<int> lps=get_lps(t);
+    int max_pali_pref=lps.back();
+    return max_pali_pref;
+}
+int get_max_pali_suff(string &s){ //need to find the longest prefix of this string which is a palindrome
+    string rev=s;
+    reverse(rev.begin(),rev.end());
+    string t=rev+'#'+s;
+    vector<int> lps=get_lps(t);
+    int max_pali_pref=lps.back();
     return max_pali_pref;
 }

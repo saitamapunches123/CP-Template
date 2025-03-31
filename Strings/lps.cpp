@@ -5,43 +5,35 @@ s[0...x-1]=s[i-x.....i]
 lps can be computed in linear time using 2 pointers
 it can be used for string matching in linear seach using KMP
 */
-
 vector<int> get_lps(string &s) {
-    int m = s.size();
-    vector<int> lps(m, 0);
-    int len = 0; // Length of the previous longest prefix suffix
-    int i = 1;
-    while (i < m) {
-        if (s[i] == s[len]) {
-            len++;
-            lps[i] = len;
-            i++;
-        } else {
-            if (len != 0) {
-                len = lps[len - 1];//try the lps of this 
-            } else {
-                lps[i] = 0;
-                i++;
-            }
+    int n = s.size();
+    vector<int> lps(n, 0);
+    int j = 0;
+
+    for (int i = 1; i < n; i++) {
+        while (j > 0 && s[i] != s[j]) {
+            j = lps[j - 1]; 
+        }
+        if (s[i] == s[j]) {
+            j++;
+            lps[i] = j;
         }
     }
     return lps;
 }
-
-void KMPsearch(string &text, string &pattern) {
-    int n = text.size();
-    int m = pattern.size();
-    vector<int> lps = computeLPS(pattern);
-    
+bool KMPsearch(string &s, string &pat) {
+    int n = s.size();
+    int m = pat.size();
+    vector<int> lps = get_lps(pat);
     int i = 0, j = 0; 
     while (i < n) {
-        if (text[i] == pattern[j]) {
+        if (s[i] == pat[j]) {
             i++;
             j++;
+            if(j==m)
+                return true;
         }
-        if (j == m) {
-            j = lps[j - 1];//found the pattern in text
-        } else if (i < n && text[i] != pattern[j]) {
+        else {
             if (j != 0) {
                 j = lps[j - 1];
             } else {
@@ -49,4 +41,5 @@ void KMPsearch(string &text, string &pattern) {
             }
         }
     }
+    return false;
 }
