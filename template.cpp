@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long int
+#define ld long double
+#define LLMAX LLONG_MAX
+#define LLMIN LLONG_MIN
 #include <algorithm> // sqrtl() __gcd() 
 #include <numeric>
 #include <cmath>
@@ -8,7 +11,7 @@ using namespace std;
 //pow(2LL,n)
 //float< double< long double
 //10^9+7=1e9+7
-
+//stoi, stoll(for long long)
 /* 
 You can do it!! because you have done it before.
 Dont worry today might not be your day.

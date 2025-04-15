@@ -16,3 +16,24 @@ int vectorToInt( vector<int>& bits) {
     }
     return num;
 }
+
+// LONG LONG version of the functions
+
+vector<int> getBits(ll num) {
+    vector<int> bits(64, 0);
+    for (ll i=0;i<64;i++) {
+        ll rep=1ll<<i;
+        if((num&rep)==rep)
+        bits[i] = 1;
+    }
+    return bits;
+}
+ll vectorToInt(vector<int>& bits) {
+    ll num = 0;
+    for (ll i = 0; i < 64; i++) {
+        if(bits[i]==1){
+            num=num|(1ll<<i);
+        }
+    }
+    return num;
+}

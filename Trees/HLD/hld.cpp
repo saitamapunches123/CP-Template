@@ -118,3 +118,13 @@ obj.dfs_hld(1,adj,v);
 //RUN TIME
 obj.update_node(node,val);
 obj.query_path(l,r)
+
+
+/*
+MOVING EDGES WEIGHT TO NODES:
+the idea is for an edge u-w> v in the tree we take the weight w of the edge and assign it to v.
+Thus value of root = 0.
+and using this we can use the same implementation of HLD and euler tour,
+
+this moving down the edge weight can be done by simple bfs.
+*/
