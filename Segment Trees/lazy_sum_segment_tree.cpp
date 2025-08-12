@@ -1,48 +1,56 @@
-
-/*
-If you have to process queries of 
-l r x add x to all a[l] to a[r]
-idx get value of a[idx] can use lazy sum segment tree does both in log n time.
+/* 
+	lazy sum tree
+	1) range update
+	2) range sum
 */
-
-
-struct LazySumSegTree
-{
-	vector<ll> seg_tree;
-	int n;
-	LazySumSegTree(int sz){
-		n=sz;
-		seg_tree.assign(4*n,0);
+struct LazySumSegTree{
+  int n;
+  vector<ll> st,lazy;
+  LazySumSegTree(int sz){
+    n=sz;
+    st.assign(4*n,0ll);
+    lazy.assign(4*n,0ll);
+  }
+  //always push before reading or writing
+  void push(int node,ll ss,ll se){
+    st[node]+=lazy[node]*(se-ss+1);
+    if(ss!=se){
+      lazy[2*node]+=lazy[node];
+      lazy[2*node+1]+=lazy[node];
+    }
+    lazy[node]=0;
+  }
+  void update(int node,int ss,int se,int x,int qs,int qe){
+	  push(node,ss,se);
+	  if(qs<=ss and qe>=se){
+	    lazy[node]+=x;
+	    push(node,ss,se);
+	    return;
+	  }
+	  if(ss>qe or se<qs)
+	    return;
+	  int lc=2*node,rc=2*node+1,mid=(ss+se)/2;
+	  update(lc,ss,mid,x,qs,qe);
+	  update(rc,mid+1,se,x,qs,qe);
+	  push(lc,ss,mid);
+	  push(rc,mid+1,se);
+	  st[node]=st[lc]+st[rc];
 	}
-
-	void update_segment(int qs,int qe,int ss,int se,int idx,int x){
-		if(qs<=ss and qe>=se){
-			seg_tree[idx]+=x;
-			return;
-		}
-		if(qs>se or qe<ss)
-			return;
-		int m=ss+(se-ss)/2,lc=2*idx+1,rc=2*idx+2;
-		update_segment(qs,qe,ss,m,lc,x);
-		update_segment(qs,qe,m+1,se,rc,x);
-	}
-
+	// can use update(i,i,x) to update 1 value during build()
 	void update(int qs,int qe,int x){
-		update_segment(qs,qe,0,n-1,0,x);
+		update(1,0,n-1,x,qs,qe);
 	}
-
-	ll get_val_helper(int req_idx,int ss,int se,int idx){
-		if(ss==se){
-			return seg_tree[idx];
+	ll query(int node,int ss,int se,int qs,int qe){
+	  push(node,ss,se);
+		if(qs<=ss and qe>=se){
+			return st[node];
 		}
-		int m=ss+(se-ss)/2,lc=2*idx+1,rc=2*idx+2;
-		if(req_idx<=m)
-			return seg_tree[idx]+get_val_helper(req_idx,ss,m,lc);
-		else
-			return seg_tree[idx]+get_val_helper(req_idx,m+1,se,rc);//just give the running sum of all the values
+		if(ss>qe or se<qs)
+	    return 0ll;
+	  int lc=2*node,rc=2*node+1,mid=(ss+se)/2;
+	  return query(lc,ss,mid,qs,qe)+query(rc,mid+1,se,qs,qe);
 	}
-	ll get_val(int req_idx){
-		return get_val_helper(req_idx,0,n-1,0);
+	ll query(int qs,int qe){
+		return query(1,0,n-1,qs,qe);
 	}
-	
 };

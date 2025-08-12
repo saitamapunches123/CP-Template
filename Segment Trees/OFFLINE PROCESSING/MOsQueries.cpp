@@ -27,14 +27,15 @@ thus TC: O((n+q)*sqrt(n)*f)
 
 
 struct MosQueries{
-	int n,block_size;
+	int qs,block_size;
 	int mo_left=0,mo_right=-1;
 	vector<int> window;
 	int cans=0;
 
-	//queries are in the form {l,r,querynumber}
-	MosQueries(vector<vector<int>> &queries){
-		n=queries.size();
+	//queries are in the form {l,r,querynumber} 
+	// n is nums.size()
+	MosQueries(vector<vector<int>> &queries,int n){
+		qs=queries.size();
 		block_size=sqrt(n);
 		sort(queries.begin(),queries.end(),[this](auto &q1,auto &q2){
 			int x1=q1[0]/block_size,x2=q2[0]/block_size;
@@ -75,7 +76,7 @@ struct MosQueries{
 	vector<int> process_queries(vector<int> &a,vector<vector<int>> &queries){
 		int m=a.size();
 		window.assign(m,0);
-		vector<int> ans(n);
+		vector<int> ans(qs);
 		for(auto q:queries){
 			int l=q[0],r=q[1],idx=q[2];
 			ans[idx]=get_ans(a,l,r);
@@ -83,3 +84,12 @@ struct MosQueries{
 		return ans;
 	}
 };
+
+
+/*
+Usage:
+
+int n=arr.size();
+MosQueries obj(nqueries,n);
+vector<int> ans=obj.process_queries(arr,nqueries); //get answer of all the queries together
+*/
