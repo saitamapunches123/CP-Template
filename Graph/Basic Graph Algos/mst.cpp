@@ -6,6 +6,7 @@ The idea is to find the mimimum weight of the tree.
 //TWO ALGOS can be used
 
 /*
+testing replit
 PRIMS
 Prim's algorithm works by adding smallest edge form connected to not connected component.
 */
