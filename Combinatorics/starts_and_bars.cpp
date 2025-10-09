@@ -1,3 +1,40 @@
+/*
+usefull for when dealing with k identical items (i.e you for example you have 3 apples 2 oranges 5 bananas and you want to choose 4 of them)
+
+Theorem¶
+The number of ways to put n identical objects into k labeled boxes is n+k-1 C n
+
+HOW TO IDENTIFY STAR AND BARS PROBLEM???
+whenever exprsions if of the form 
+
+n=4 and k=3
+
+**|*|* => number of arrangements =n+k-1Ck-1
+
+x1+x2+x3+...xk=n
+where x1,x2,x3....>=0 
+i.e xi represents the number of items in box i
+or can be represented as stars and bars 
+thus number of solutions of the above equation is
+n+k-1 C n = n+k-1 C k-1
+
+
+HOW TO DEAL WITH LOWER BOUNDS???
+let x1+x2+x3+....+xk=n and xi>=ai
+so, x1-a1+x2-a2+...+xk-ak=n-a1-a2-...ak
+thus number of solutions of the above equation is
+n-a1-a2-...ak+k-1 C k-1
+
+
+HOW TO DEAL WITH UPPER BOUNDS???
+using inclusion exclusion principle
+convert upper bound to lower bound
+thus for xi<ai
+ans= toal- solution with xi>=ai = n+k-1 C k-1 - (n-ai+k-1 C k-1) 
+*/
+
+
+ll mod=1000000007;
 //Binary exponeantation
 ll mod_exp(ll base, ll exp, ll mod) {
     ll res = 1;
