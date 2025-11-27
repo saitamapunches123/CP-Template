@@ -13,6 +13,14 @@ WHY IT WORKS?
 lets say 
 (m1(m2m3))m4
 
+
+The idea is to think of the last operation what will be the last operation?
+You get left_ans=a[l,...i] than right_ans=a[i+1...r] and than combine left_ans and right_ans to get the final answer
+OR
+The first operation what will be the first operation?
+You get right_ans=a[i+1...r] than left_ans=a[l,...i] to break the array takes some operation
+
+MCM is usefull when we need to perform operation on subarrays.
 */
 
 //FOR EXAMPLE:

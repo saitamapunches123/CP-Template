@@ -36,5 +36,21 @@ int prims(vector<vector<pair<int,int>>>&adj){
 
 /*
 KRUSKAL:
-KRUSKAL's algorithm sorts the edges by weight and tahn pick the smallest v-1 edges ucht that each edge doesnt form a cycle
+KRUSKAL's algorithm sorts the edges by weight and than pick the smallest v-1 edges ucht that each edge doesnt form a cycle
 */
+sort(edges.begin(),edges.end(),[](vector<int> &e1,vector<int> &e2){
+    if(e1[2]!=e2[2])
+        return e1[2]<e2[2];
+    return e1<e2;
+});
+int ans=0,cnt=0;
+for(int i=0;i<num_edges;i++){
+    if(cnt==n-1)
+        break;
+    int u=edges[i][0],v=edges[i][1],w=edges[i][2];
+    if(obj.sameSet(u,v))
+        continue;
+    obj.unite(u,v);
+    cnt++;
+    ans+=w;
+}

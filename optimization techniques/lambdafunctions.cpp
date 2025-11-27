@@ -30,3 +30,8 @@ function<ll(int)> recur=[&](int i)->ll{// here auto wont work use
 };
 return recur(0);
 
+
+//Using in sort:
+sort(v.begin(), v.end(), [](int a, int b){
+    return a > b;   // descending order
+});
