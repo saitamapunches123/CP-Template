@@ -54,17 +54,3 @@ struct Sparse_Seg_Tree{
     update(root,0,max_n,qs,qe,x);
   }
 };
-void solve()
-{	
- Sparse_Seg_Tree obj;
- int n,c=0;cin>>n;
- for(int i=0;i<n;i++){
-  int op,l,r;cin>>op>>l>>r;
-  l+=c;r+=c;
-  if(op==1){
-    c=obj.query(l,r);
-    cout<<c<<endl;
-  }else
-    obj.update(l,r,1);
- }
-}

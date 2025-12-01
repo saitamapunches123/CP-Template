@@ -14,13 +14,8 @@ ll vectorToInt(vector<int>& bits) {
     return num;
 }
 struct TrieNode{
-	TrieNode* child[2];
-	int cnt;
-	TrieNode(){
-		child[0]=NULL;
-		child[1]=NULL;
-		cnt=0;
-	}
+	TrieNode* child[2]={NULL,NULL};
+	int cnt=0;
 	TrieNode* get_child(int idx){
 		if(this->child[idx]==NULL){
 			this->child[idx]=new TrieNode();
@@ -29,10 +24,7 @@ struct TrieNode{
 	}
 };
 struct Trie{
-	TrieNode* root;
-	Trie(){
-		root=new TrieNode();
-	}
+	TrieNode* root=new TrieNode();
 	void insert(ll x){
 		vector<int> bits=getBits(x);
 		TrieNode* curr=root;
@@ -52,6 +44,19 @@ struct Trie{
 			curr=curr->get_child(y);
 		}
 		curr->cnt-=1;
+	}
+	int get_less(ll x){//get cnt of values in trie strictly less than x
+			vector<int> bits=getBits(x);
+			TrieNode* curr=root;
+			int ans=0;
+			for(auto y:bits){
+					if(y==1){
+						 TrieNode *child0=curr->get_child(0);
+						 ans+=child0->cnt;
+					}
+					curr=curr->get_child(y);
+		}
+		return ans;
 	}
 	int get_cnt(){
 		return root->cnt;
