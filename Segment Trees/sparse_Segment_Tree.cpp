@@ -1,3 +1,10 @@
+/*
+Sparse Segement Tree also called Dynamic Segment Tree is usefull when the range of queries is large(>1e6).
+Thus making node for each index is not feasible. So we make node only when needed like Tries.
+
+Now for each query we traverse logn elements so TC is logn per query.
+*/
+
 int max_n=1e9+10;
 struct Sparse_Seg_Tree{
   struct Node{
@@ -54,3 +61,5 @@ struct Sparse_Seg_Tree{
     update(root,0,max_n,qs,qe,x);
   }
 };
+
+//PS: a lot of sparse segment tree question can be solved with segmentree + cordianate compression
