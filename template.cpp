@@ -4,6 +4,8 @@ using namespace std;
 #define ld long double
 #define LLMAX LLONG_MAX
 #define LLMIN LLONG_MIN
+using tii=tuple<int,int,int>;
+using pii=pair<int,int>;
 #include <algorithm> // sqrtl() __gcd() 
 #include <numeric>
 #include <cmath>
@@ -20,7 +22,7 @@ Start Fresh, Dry Run, Do Maths if you get stuck
 void solve()
 {	
 
-	
+
 }
 void fast() {
 	ios_base::sync_with_stdio(false);

@@ -41,7 +41,7 @@ struct MosQueries{
 			int x1=q1[0]/block_size,x2=q2[0]/block_size;
 			if(x1!=x2)
 				return x1<x2;
-			return (x1 % 2 == 0) ? (q1[1] < q2[1]) : (q1[1] > q2[1]);
+			return (x1 &1 == 0) ? (q1[1] < q2[1]) : (q1[1] > q2[1]); // Also try just using if this TLEs : return q1[1]<q2[1]; 
 		});
 	}
 	void remove(int x){
