@@ -41,3 +41,6 @@ MCM is usefull when we need to perform operation on subarrays.
 }
 //TC: n^3 (n^2 states and each state has n transitions)
 //SC: n^2
+
+
+// WE CAN OPTIMIZE THIS IF COST FUNCTION SATISFIES QUADRANGLE INEQUALITY TO O(n^2)
