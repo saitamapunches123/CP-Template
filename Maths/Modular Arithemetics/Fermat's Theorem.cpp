@@ -9,12 +9,11 @@ ll mod_exp(ll base, ll exp, ll mod) {
     }
     return res;
 }
-/* If x,mod are NOT co-primes no mod inverse use something else
-for ex: mod=5,x=10 can't use mod_inv
-IF mod is prime
+/* 
+USE ONLY IF MOD IS PRIME
 a^−1 MOD=a^(MOD−2) MOD
 */
-ll mod_inv(ll x, ll mod) {
+ll mod_inv_fermat(ll x, ll mod) {
     return mod_exp(x, mod - 2, mod); // Only works if mod is prime
 }
 
@@ -28,4 +27,3 @@ so phi(10)=phi(2)*phi(5)=1*4=4
 so mod_inv(x,10)=x^(4-1)=x^(3)(mod 10)
 
 */
-
