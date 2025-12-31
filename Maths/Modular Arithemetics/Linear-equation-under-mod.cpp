@@ -30,7 +30,7 @@ ll mod_inv(ll a, ll mod) {
   return x % mod; // x*a ≡ 1 mod m
 }
 
-// solves ax=b mod m
+// solves ax=b mod m 
 pair<ll,ll> solve_linear_equation_under_mod(ll a, ll b, ll m) {
     m = abs(m);
     a = ((a % m) + m) % m;
