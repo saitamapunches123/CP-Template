@@ -1,15 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long int
+#include <algorithm> // sqrtl() __gcd() 
+#include <numeric>
+#include <cmath>
+#include <iomanip>//to do setprecision(3)
+#define int long long
+#define ll long long 
 #define ld long double
 #define LLMAX LLONG_MAX
 #define LLMIN LLONG_MIN
 using tii=tuple<int,int,int>;
 using pii=pair<int,int>;
-#include <algorithm> // sqrtl() __gcd() 
-#include <numeric>
-#include <cmath>
-#include <iomanip>//to do setprecision(3)
 //pow(2LL,n)
 //float< double< long double
 //10^9+7=1e9+7
@@ -22,21 +23,19 @@ Start Fresh, Dry Run, Do Maths if you get stuck
 void solve()
 {	
 
-
 }
 void fast() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(0); cout.tie(0);
 }
-int main()
+signed main()
 {
 #ifndef ONLINE_JUDGE
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 #endif
 	fast();
-	int t;
-	cin >> t;
+	int t;cin>>t;
 	while (t--)
 	{
 		// cout << t;
