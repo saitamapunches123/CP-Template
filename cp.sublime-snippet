@@ -1,3 +1,5 @@
+<snippet>
+  <content><![CDATA[
 #include <bits/stdc++.h>
 using namespace std;
 #include <algorithm> // sqrtl() __gcd() 
@@ -31,26 +33,26 @@ void solve() {
 }
 
 void fast() {
-	ios_base::sync_with_stdio(false);
-	cin.tie(0); cout.tie(0);
+  ios_base::sync_with_stdio(false);
+  cin.tie(0); cout.tie(0);
 }
 signed main(){
 #ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
+  freopen("input.txt", "r", stdin);
+  freopen("output.txt", "w", stdout);
 #endif
-	fast();
-	compute();
-	int t;cin>>t;
-	while (t--)
-	{
-		// cout << t;
-		solve();
-	}
-	//int x=10,a=3;
-	//double d =ceil((1.0*x)/a);
-	//cout <<fixed<< setprecision(22) << d;
-	//fixed keeps the data in numeric and not scientefic i.e (1e)
+  fast();
+  compute();
+  int t;cin>>t;
+  while (t--)
+  {
+    // cout << t;
+    solve();
+  }
+  //int x=10,a=3;
+  //double d =ceil((1.0*x)/a);
+  //cout <<fixed<< setprecision(22) << d;
+  //fixed keeps the data in numeric and not scientefic i.e (1e)
 }
 /*
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -67,3 +69,9 @@ signed main(){
 ⣼⣿⠍⠉⣿⡭⠉⠙⢺⣇⣼⡏⠀⠀⠀⣄⢸⠀⠀⠀⠀⠀⠀
 ⣿⣿⣧⣀⣿.........⣀⣰⣏⣘⣆⣀⠀⠀
 */
+]]></content>
+  <tabTrigger>cp</tabTrigger>
+  <description></description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope >source.python</scope > -->
+</snippet>
