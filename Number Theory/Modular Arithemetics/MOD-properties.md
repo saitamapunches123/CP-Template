@@ -37,4 +37,26 @@
 | 1 | `d divides k` | gcd(a/d, m/d) = 1 → a/d and m/d are coprime → `Inverse Exists`. Use **Extended Euclidean Algorithm**(m/d not prime) or **Fermat's Theorem** (m/d is prime) to find inverse |
 | 2 | `d does not divide k` | `Inverse Does Not Exist` |
 
-### Fermat's Theorem
+### Fermat's Theorem:
+
+- If  `gcd(a,m) = 1` a,m are coprime:
+`a^φ(m) ≡ 1 mod{m}`  
+
+- φ(m) = Euler’s Totient function (the number of integers from 1 to m that are coprime with m.
+
+---
+- **φ of a prime number:**
+`φ(p)=p-1` (Every number except p is coprime with p)
+
+- **φ of a power of a prime:**
+`φ(p^n)=p^n(1 - 1/p)`
+
+
+- **φ of a number:**
+Let `n=p1^e1*p2^e2*p3^e3...`
+`φ(n)=φ(p1^e1)*φ(p2^e2)*φ(p2^e2)`
+---
+#### Using Fermat's Theorem: `a^x (mod m) ≡ (a^x(mod φ(m))) (mod m)`
+- for prime p:
+` a^x (mod p) ≡ (a^x(mod p-1)) (mod p)` **USEFULL TO COMPUTE BIG POWERS**
+  - let x= q(m-1)+r or x ≡ r mod (m-1) `a^x (mod p) ≡ a^(q*(m-1))*a^r ≡ 1*a^r`

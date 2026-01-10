@@ -18,12 +18,17 @@ ll mod_inv_fermat(ll x, ll mod) {
 }
 
 /* GENERALIZATION: Fermat's Theorem
-
-mod_inv(a,m)=a^(phi(m))-1 (mod m)
-phi(p)=p-1 if p is prime
-phi(p^k)=p^k-p^(k-1)
-phi(a.b)=phi(a).phi(b)
-so phi(10)=phi(2)*phi(5)=1*4=4
+a^φ(m) ≡ 1 mod m  
+for prime m , φ(m)=m-1
+a^φ(m) = a^m-1=1 mod m
+a^m-2=a^-1 mod m
 so mod_inv(x,10)=x^(4-1)=x^(3)(mod 10)
+
+
+Using Fermat's Theorem:
+
+a^x mod m = a^(x mod φ(m)) mod m 
+for prime m m=p
+a^x mod p = a^(x mod p-1) mod p 
 
 */
