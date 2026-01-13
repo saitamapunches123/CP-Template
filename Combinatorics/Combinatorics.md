@@ -10,3 +10,11 @@
 
 - Stars and bars is identified when x1+x2+x3+... = n and xi>=0
 - Stars and bars deals with number of ways to pick/distribute identical items. multinomial deals with number of ways to arrange identical items
+
+## Complement Law
+
+- `n(A ∪ B) + n((A ∪ B)′) = n(U)` U -> universal set or Total`
+- `n((A∪B)′) = n(A′∩B′)`
+-  This is usefull as to calculate `n(A∩B) = n(U) - n(A′U B′)  valid+ invalid = Total` and n(A`U B`) can be calculate using `inclusion exclusion principle`
+
+

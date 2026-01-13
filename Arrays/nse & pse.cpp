@@ -28,7 +28,7 @@ vector<int> get_nse(vector<int> &a){
 
 /*
   number of subarray where nums[i] is min  = (i-pse[i])*(nse[i]-i) 
-  as there could be multiple same min to avloid change one of nse or pse to a[i] <=a[st.top()] to avoid overcouning.
+  as there could be multiple same min to avoid Overcounting change one of nse or pse to a[i] <=a[st.top()] to avoid overcouning.
   for example: 3,4,3,2
   pse=[-1,0,0,3] here using pse<=nums[i]
   nse=[3,2,3,4] here using nse<nums[i]
