@@ -24,3 +24,8 @@ Smallest power of 2 that is **strictly greater** than a given power of 10.
 
 - Usefull in xor questions as xor of numbers from 1 to n will not have a more significant bit than n.
 - https://codeforces.com/contest/862/problem/C
+
+## TLE Constraints
+
+- IF n is around 1e5 n*log^2(n) and n*sqrt(n) works
+- but for n around 1e6 these Contranints may give TLE

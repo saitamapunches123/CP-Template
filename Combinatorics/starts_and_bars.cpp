@@ -7,12 +7,14 @@ The number of ways to put n identical objects into k labeled boxes is n+k-1 C n
 HOW TO IDENTIFY STAR AND BARS PROBLEM???
 whenever exprsions if of the form 
 
+x1+x2+x3+...xk=n
+where x1,x2,x3....>=0  
+
 n=4 and k=3
 
 **|*|* => number of arrangements =n+k-1Ck-1
 
-x1+x2+x3+...xk=n
-where x1,x2,x3....>=0 
+
 i.e xi represents the number of items in box i
 or can be represented as stars and bars 
 thus number of solutions of the above equation is

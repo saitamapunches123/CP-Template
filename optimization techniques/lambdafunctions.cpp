@@ -35,3 +35,15 @@ return recur(0);
 sort(v.begin(), v.end(), [](int a, int b){
     return a > b;   // descending order
 });
+
+
+// PS: you can also create empty blocks 
+
+void fun(){
+    {
+        stack<int> st;
+
+    }
+    // the stack isnt available here
+}
+

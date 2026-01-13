@@ -1,4 +1,4 @@
-ll nthterm(ll a,ll d,ll n){
+ll nthtermAP(ll a,ll d,ll n){
     return a+(n-1)*d;
 }
 ll sumAP(ll a,ll d,ll n){
@@ -7,7 +7,7 @@ ll sumAP(ll a,ll d,ll n){
 }
 
 
-ll nthtermMod(ll a,ll d,ll n){
+ll nthtermAPMod(ll a,ll d,ll n){
   return (a+(n-1)*d)%mod;
 }
 

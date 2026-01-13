@@ -32,3 +32,8 @@ for prime m m=p
 a^x mod p = a^(x mod p-1) mod p 
 
 */
+ll big_power_exponent(ll a,ll x,ll mod){
+    ll phi=mod-1; //assuming mod is prime
+    x=x%phi;
+    return mod_exp(a,x,mod);
+}
