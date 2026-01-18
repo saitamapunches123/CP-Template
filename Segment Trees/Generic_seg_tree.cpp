@@ -5,12 +5,12 @@ struct Generic_seg_tree{
 		return min(val1,val2); //change this based on Min,Max,Sum segment tree
 	}
 	Generic_seg_tree(int sz){
-		n=sz;
+		n=sz+1;
 		seg_tree.assign(4*n,base_value);
 	}
 	void update(int idx,int val,int si,int ss,int se){
 		if(ss==se){
-			seg_tree[si]=val; //change this based on the problem if you need to set the value than use seg_tree[si]=val
+			seg_tree[si]=val; //change this based on the problem if you need to add the value than use seg_tree[si]+=val
 			return;
 		}
 		int mid=ss+(se-ss)/2,lc=2*si+1,rc=2*si+2;
