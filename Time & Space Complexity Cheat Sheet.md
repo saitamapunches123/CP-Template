@@ -5,6 +5,10 @@
 
 ## Time Complexity Based on `n`
 
+### ⚠️ **ALL THESE VALUES ARE APRROX**
+- A badly written n^2 solution might TLE but a better simpler might pass
+- If `n ≤ 500` n³ might fail for 1s but pass for 3 s
+
 | n (approx) | Acceptable Time Complexity |
 |-----------|----------------------------|
 | n ≤ 10 | O(n!), O(2^n) |
@@ -30,4 +34,6 @@
 - For ex: `int arr[1e7]` ≈ 1e7*4/1e6 ≈ 40 MB
 
 
-https://codeforces.com/blog/entry/98210
+### References
+- https://codeforces.com/blog/entry/98210
+- https://codeforces.com/blog/entry/21344
