@@ -1,2 +1,26 @@
+modules = ["python-3.11"]
 [agent]
 expertMode = true
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Build Check"
+
+[[workflows.workflow]]
+name = "Build Check"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "g++ \"Data Structures/KSum.cpp\" -o ksum_check && ./ksum_check && rm ksum_check"
+
+[workflows.workflow.metadata]
+outputType = "console"

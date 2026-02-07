@@ -1,12 +1,7 @@
-//  modinv(p*q) = mod inv((p*q% mod))
+//  when we want to deal with fractions in inverse i.e p/q= p*q^-1 (mod m)
+// we just keep this x= p*q^-1 (mod m) and than to add to fractions f1 and f2
+// we do f1+f2= (a/b)+(c/d)= a*b-1+b*d-1 (mod m) i.e we only need to keep the inverse value of fraction and not numerator and denominator
 
-pair<ll,ll> add_fracts(pair<ll,ll> f1,pair<ll,ll> f2){
-  auto [a,b]=f1;
-  auto [c,d]=f2;
-  ll den=(b*d)%mod;
-  ll num=(a*d+b*c)%mod;
-  return {num,den};
-}
 ll mod_exp(ll base, ll exp, ll mod) {
     ll res = 1;
     while (exp > 0) {

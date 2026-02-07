@@ -10,9 +10,9 @@ vector<int> get_lis(vector<int> &a){
   for (auto x:a) {
       auto it = lower_bound(lis.begin(), lis.end(), x);
       if (it == lis.end())
-          lis.push_back(b);
+          lis.push_back(x);
       else
-          *it = b;
+          *it = x;
   }
   return lis;
 }

@@ -24,7 +24,7 @@ struct prefix_sum_2D{
 
 //  1d prefix sum to get sum of a sub array
 struct prefix_sum_1D {
-    vector<int> ps;//using the definition ps[i]= sum of all elements with index<i
+    vector<ll> ps;//using the definition ps[i]= sum of all elements with index<i
     prefix_sum_1D(vector<int>& arr) {
         int n=arr.size();
         ps.assign(n+1,0ll);
