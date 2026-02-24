@@ -21,3 +21,24 @@ ll get_fract_inv(pair<ll,ll>& f){
   ll b_inv=mod_inv(b,mod);
   return (a*b_inv)%mod;
 }
+
+// converts fraction to its minimal form
+void reduce_fraction(pii &frac) {
+    int &num = frac.first;
+    int &den = frac.second;
+
+    if (den == 0) return;          // undefined, leave as is
+    if (num == 0) {
+        den = 1;                  // canonical zero
+        return;
+    }
+
+    int g = __gcd(abs(num), abs(den));
+    num /= g;
+    den /= g;
+
+    if (den < 0) {                // keep denominator positive
+        num = -num;
+        den = -den;
+    }
+}

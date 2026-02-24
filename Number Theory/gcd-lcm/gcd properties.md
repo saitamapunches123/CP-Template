@@ -1,6 +1,6 @@
 # GCD PROPERTIES — Cheat Sheet
 
-gcd -> greatest coomon divisor of x and y
+gcd -> greatest common divisor of x and y
 
 REMEMEBR: if d is a common divisor of x and y d is a common divisor of ax+by:
 ax+by(mod d)= a *x(mod d)+b*y(mod d) = a*0+b*0=0
@@ -11,7 +11,7 @@ ax+by(mod d)= a *x(mod d)+b*y(mod d) = a*0+b*0=0
 | gcd(x,y) >= gcd(x,y,z) | gcd is a decreasing function |
 | gcd(x,y)<=min(x,y) | intutive |
 | gcd(x,y) = gcd(x,y-x) | eucledian algo | 
-| gcd(a1,a2,a3,...) = gcd(a1,a2-a1,a3,a4,....) | from above |
+| gcd(a1,a2,a3,...) = gcd(a1,a2-a1,a3,a4,....)=gcd(a1,a2,a3-a1,a4,....)=gcd(a1,a2-1,a3-a1,a4-1,....) and so on  | from above |
 
 
 gcd(a1,a2,a3,...) = gcd(gcd(a1,a2),a3,...) = gcd(gcd(a1,a2-a1),a3,...) =gcd(a1,a2-a1,a3,...)

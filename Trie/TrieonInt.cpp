@@ -58,6 +58,33 @@ struct Trie{
 		}
 		return ans;
 	}
+	int get_max_xor(ll x){ // get max value of x^y where y is in trie
+		vector<int> bits=getBits(x);
+		TrieNode* curr=root;
+		ll ans=0;
+		for(int i=0;i<32;i++){
+				int y=bits[i];
+				ll rep=1ll<<(31-i);
+				TrieNode *child0=curr->get_child(0);
+				TrieNode *child1=curr->get_child(1);
+				if(y==1){
+						if(child0->cnt>0){
+								curr=child0;
+								ans=ans | rep;
+						}else{
+								curr=child1;
+						}
+				}else{// y==0
+						if(child1->cnt>0){
+								curr=child1;
+								ans=ans | rep;
+						}else{
+								curr=child0;
+						}
+				}
+		}
+		return ans;
+	}
 	int get_cnt(){
 		return root->cnt;
 	}
