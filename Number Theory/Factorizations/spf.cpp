@@ -19,7 +19,7 @@ void build_spf(int n){ //SIMILLAR TO SIEVE but here spf[i] is the smallest prime
     }
   }
 }
-
+// prime factorization of x in O(logx)
 vector<int> prime_factorize(int x){
   set<int> ans; // if we want distinct primes else use vector
   while(x>1){

@@ -19,14 +19,10 @@ bool is_prime(ll n) { // ROUGHLY EVERY log(n) values has a prime so in 1 to n th
 
 
 //doesnt include 1 as a factor
-void primeFactors(int n, unordered_map<int, int>&facts)
+void primeFactors(int n, map<int, int>&facts)
 {
-	while (n % 2 == 0)
-	{
-		facts[2]++;
-		n = n / 2;
-	}
-	for (int i = 3; i <= sqrt(n); i = i + 2)
+	
+	for (int i = 2; i <= sqrt(n); i++)
 	{
 		while (n % i == 0)
 		{
@@ -35,6 +31,6 @@ void primeFactors(int n, unordered_map<int, int>&facts)
 		}
 	}
 	//n is a prime
-	if (n > 2)
+	if (n > 1)
 		facts[n]++;
 }

@@ -4,7 +4,7 @@ using namespace std;
 #include <numeric>
 #include <cmath>
 #include <iomanip>//to do setprecision(3)
-#define int long long
+// #define int long long //if you think the code is overflowing uncomment this all int will be long long
 #define ll long long 
 #define ld long double
 #define LLMAX LLONG_MAX
@@ -21,7 +21,17 @@ using pii=pair<int,int>;
 3) Start Fresh, Dry Run, Do Maths if you get stuck.
 4) Re-Write full code if implementation gets lenghty.
 */
-
+template<typename T>
+void display(const vector<T>& v) {
+		for (const auto& x : v)
+				cout << x << " ";
+		cout << endl;
+}
+template<typename K, typename V>
+void display(const map<K, V>& m) {
+		for (const auto& [key, value] : m)
+				cout << key << " -> " << value << "\n";
+}
 void compute() { // compute() fn only runs once.
 
 }

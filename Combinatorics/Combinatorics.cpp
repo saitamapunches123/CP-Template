@@ -63,4 +63,10 @@ struct Combinatorics {
         if(sum!=n) return -1;
         return (num * den) % mod;
     }
+    int catlan(int n){ // Cn=1/(n+1) 2nCn=2n!/(n+1)!*n!
+        ll num=facts[2*n];
+        ll den=(inv_facts[n+1]*inv_facts[n])%mod;
+        // cout<<n<<" "<<num<<endl;
+        return (num*den)%mod;
+    }
 };

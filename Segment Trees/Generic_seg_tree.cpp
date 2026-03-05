@@ -8,6 +8,12 @@ struct Generic_seg_tree{
 		n=sz+1;
 		seg_tree.assign(4*n,base_value);
 	}
+	Generic_seg_tree(vector<int> &a){
+		n=a.size();
+		seg_tree.assign(4*n,base_value);
+		for(int i=0;i<n;i++)
+			update(i,a[i]);
+	}
 	void update(int idx,int val,int si,int ss,int se){
 		if(ss==se){
 			seg_tree[si]=val; //change this based on the problem if you need to add the value than use seg_tree[si]+=val

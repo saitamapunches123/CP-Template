@@ -15,9 +15,8 @@ ll mod_exp(ll base, ll exp, ll mod) {
 ll mod_inv(ll x, ll mod) {
     return mod_exp(x, mod - 2, mod); // Only works if mod is prime
 }
-// to represent p/q as p*mod_inv(q);
-ll get_fract_inv(pair<ll,ll>& f){
-  auto [a,b]=f;
+// to represent a/b as a*mod_inv(b);
+ll get_fract_inv(ll a,ll b){
   ll b_inv=mod_inv(b,mod);
   return (a*b_inv)%mod;
 }
