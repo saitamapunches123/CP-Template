@@ -12,6 +12,7 @@ Applications of Catalan number:
 2) Cn is equal to the number of full binary trees with n+1 leaves
 3) Cn is equal to the number of mountain ranges of length 2n consisting of n
  upstrokes and n downstrokes. (Simmilar to valid parenthesis)
+4) Cn is also the number of paths along the edges of a n*n grid that don't pass the diagonal
 */
 
 Reference: https://usaco.guide/adv/catalan?lang=cpp

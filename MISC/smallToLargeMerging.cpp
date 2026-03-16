@@ -27,3 +27,9 @@ set<int> dfs(int curr,int par,vector<int> &ans,vector<vector<int>>&adj,vector<in
 	ans[curr]=subset_cols.size();
 	return subset_cols;
 }
+
+
+/*
+Questions:
+https://www.geeksforgeeks.org/problems/k-sum-paths/1
+*/
