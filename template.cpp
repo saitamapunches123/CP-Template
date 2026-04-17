@@ -21,22 +21,37 @@ using pii=pair<int,int>;
 3) Start Fresh, Dry Run, Do Maths if you get stuck.
 4) Re-Write full code if implementation gets lenghty.
 */
+const double eps = 1e-9;
+const string Yes = "Yes", No="No", Alice="Alice", Bob="Bob";
 template<typename T>
-void display(const vector<T>& v) {
-		for (const auto& x : v)
+void display(initializer_list<T> v) {
+		for (auto& x : v)
 				cout << x << " ";
 		cout << endl;
 }
-template<typename K, typename V>
-void display(const map<K, V>& m) {
-		for (const auto& [key, value] : m)
-				cout << key << " -> " << value << "\n";
+template<typename T>
+void display(const vector<T>& v) {
+	for (const auto& x : v)
+			cout << x << " ";
+	cout << endl;
+}
+
+vector<vector<int>> make2D(int n, int m, int val=0) {
+	 return vector<vector<int>>(n, vector<int>(m, val));
+}
+// 	auto dp=make3D(10,20,30,-1);
+vector<vector<vector<int>>> make3D(int n, int m, int k, int val=0) {
+	 return vector<vector<vector<int>>>(n, vector<vector<int>>(m, vector<int>(k, val)));
 }
 void compute() { // compute() fn only runs once.
 
 }
-
-void solve() {	
+/*
+	if need to debug a test case (for ex: to debug test case 10)
+	if(tc==10)
+		print intput in 1 concatenated(. or ,) string(no space or line)	
+*/
+void solve(int tc) {
 
 }
 
@@ -52,10 +67,9 @@ signed main(){
 	fast();
 	compute();
 	int t;cin>>t;
-	while (t--)
-	{
-		// cout << t;
-		solve();
+	for(int tc=1;tc<=t;tc++){
+		// cout<<tc<<":"<<endl;
+		solve(tc);
 	}
 	//int x=10,a=3;
 	//double d =ceil((1.0*x)/a);

@@ -1,3 +1,14 @@
+/*
+Sengement tree can be used on any operator that is monoid i.e
+1) Associative (a op b) op c = a op (b op c)
+2) Identity element (a op e = a)
+
+For ex: muliplication,addition,gcd is monoid
+gcd is associative and has identity element is  0
+
+Segment Tree on gcd: https://leetcode.com/contest/weekly-contest-497/problems/good-subsequence-queries/description/
+*/
+
 struct Generic_seg_tree{
 	vector<ll> seg_tree;
 	ll n,base_value=LLONG_MAX; //change this

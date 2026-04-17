@@ -49,6 +49,8 @@ struct Combinatorics {
     OR
     number of solution to x1+x2+...xk=n for xi>=0
     ans=n+k-1 C n=n+k-1 C k-1
+    OR 
+    Combination with repetition
     */
     ll stars_and_bars(ll items,ll boxes){
       return nCr(items+boxes-1,items);
