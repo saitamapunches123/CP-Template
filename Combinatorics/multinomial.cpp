@@ -6,7 +6,10 @@ OR
     number of arrangements of the n items where each item belongs in a group i which has ki members
     and k1 + k2 + ... + kr = n
 
-Multinomial(n; k1, k2, ..., kr) = n! / (k1! * k2! * ... * kr!)
+Multinomial(n; k1, k2, ..., kr) (n k1,k2,k3,...kr)= n! / (k1! * k2! * ... * kr!)
+
+Multinomial is generalization of nCr as in nCr we pick r items but not pick n-r items(2 groups)
+but in multinomial we can have more than 2 groups
 
 */
 

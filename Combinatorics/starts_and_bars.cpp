@@ -30,9 +30,15 @@ n-a1-a2-...ak+k-1 C k-1
 
 HOW TO DEAL WITH UPPER BOUNDS???
 using inclusion exclusion principle
+https://cp-algorithms.com/combinatorics/inclusion-exclusion.html#number-of-upper-bound-integer-sums
 convert upper bound to lower bound
-thus for xi<ai
-ans= toal- solution with xi>=ai = n+k-1 C k-1 - (n-ai+k-1 C k-1) 
+0<=xi<=b 
+ans= toal- invalid_solution
+
+invalid solution = nC1*n-(b+1)-k-1Ck-1 - nC2*n-2*(b+1)-k-1Ck-1 + nC3*n-3*(b+1)-k-1Ck-1 - .... so on
+
+as if 1 xi>=b+1 No of solutions is nC1*n-(b+1)-k-1Ck-1 pick the one where xi>=b+1 and now we have n-(b+1) items to distribute in k boxes
+
 */
 
 

@@ -1,5 +1,9 @@
 # Combinatorics Cheat Sheet
 
+- All Combinatorics is recursion and all formulas can be broken down recursively
+  - For Example: nCr=n-1Cr-1+n-1Cr
+    - think of it as for any object x we can pick it (now from rest n-1 pick r-1) and NOT pick it (now from rest n-1 pick r)
+
 | Pattern            | Use                                                                             | Formula                                                 |
 | ------------------ | ------------------------------------------------------------------------------- | ------------------------------------------------------- |
 | **nCr**            | Number of ways to choose r elements from n elements                             | `C(n, r) = n! / (r! (n-r)!)` |
