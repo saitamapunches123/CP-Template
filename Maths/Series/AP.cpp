@@ -14,7 +14,7 @@ ll nthtermAPMod(ll a,ll d,ll n){
 int inv2 = mod_inv_fermat(2,mod);
 ll sumAPMod(ll a,ll d,ll n){
   a%=mod;d%=mod;n%=mod;	
-  ll an=nthtermMod(a,d,n);
+  ll an=nthtermAPMod(a,d,n);
   ll ans=(n*(a+an))%mod;
   return (ans*inv2)%mod;
 }
