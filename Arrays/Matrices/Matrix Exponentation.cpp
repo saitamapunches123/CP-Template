@@ -1,24 +1,27 @@
 int mod= 1000000007;
-using vi=vector<int>;
+using vi=vector<ll>;
 using Matrix = vector<vi>;
 void display(Matrix &A){
-  for(auto x:A){
-    for(auto y:x)
-      cout<<y<<" ";
     cout<<endl;
-  }
-}
-Matrix multiply(Matrix& A,Matrix& B){
-  int ra=A.size(),ca=A[0].size(),rb=B.size(),cb=B[0].size();
-  // ca must be equal to rb
-  Matrix C(ra,vi(cb,0));
-  for(int i=0;i<ra;i++){
-    for(int j=0;j<cb;j++){
-      for(int k=0;k<ca;k++)
-        C[i][j]=(C[i][j]+(A[i][k]*B[k][j])%mod)%mod;
+    for(auto x:A){
+        display(x);
     }
-  }
-  return C;
+    cout<<endl;
+}
+Matrix multiply(Matrix& A, Matrix& B) {
+    int ra = A.size(), ca = A[0].size(),rb=B.size() cb = B[0].size();
+    // ca must be equal to rb
+    Matrix C(ra, vi(cb, 0));
+
+    for (int i = 0; i < ra; i++) {
+        for (int j = 0; j < cb; j++) {
+            __int128 sum = 0;
+            for (int k = 0; k < ca; k++) 
+                sum += 1LL * A[i][k] * B[k][j];
+            C[i][j] = sum % mod;
+        }
+    }
+    return C;
 }
 
 Matrix get_identity(int n){
