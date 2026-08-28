@@ -41,3 +41,26 @@ void reduce_fraction(pii &frac) {
         den = -den;
     }
 }
+void display_fraction(pii &f){
+    auto [p,q]=f;
+    cout<<p<<" / "<<q<<endl;
+}
+bool is_greater(pii &a,pii &b){// return true if a>=b
+    auto [p,q]=a;
+    auto [r,s]=b;
+    ll f1=(ll)p*s,f2=(ll)q*r;
+    return f1>=f2;
+    
+}
+
+pii mini(pii &a,pii &b){
+    if(is_greater(a,b))
+        return b;
+    return a;
+}
+
+pii maxi(pii &a,pii &b){
+    if(is_greater(a,b))
+        return a;
+    return b;
+}
